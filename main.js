@@ -18,106 +18,90 @@
 
 
 // selezione richiesta dati
-let selectNamePassenger = document.getElementById('SelectName')
 
 
-let selectKM = document.getElementById('selectKM')
 
+    const selectNamePassenger = document.getElementById('SelectName');
 
-let selectAge = document.getElementById('name-passenger')
 
-const maggiorenne= document.getElementById("age-18").innerHTML
-
-console.log(maggiorenne)
-
-
-
-?selezione biglietto effettivo 
-
-
-let namePassenger = document.getElementById('name-passenger')
-let typeTicket = document.getElementById('name-passenger')
-let cariage = document.getElementById('name-passenger')
-let ticketCode = document.getElementById('name-passenger')
-let ticketPrice = document.getElementById('name-passenger')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let priceBase = 0.21;
-const scontoGiovani = 0.20;
-const scontoAnziani = 0.40;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let finalPrice;
-
-let price = kmPercorsi * priceBase
-let priceDiscount 
-
-
-
-
-
-
-
-
-
-
-if (eta < 18) {
-    
-    priceDiscount = price * scontoGiovani;
-    
-    finalPrice = price - priceDiscount
-    
-
-} else if (eta >= 65) {
-
-    priceDiscount = price * scontoAnziani;
-    
-    finalPrice= price - priceDiscount
-
-
-} else {
+    const selectKM = document.getElementById('selectKM');
     
     
-}
+    const selectAge = document.getElementById('name-passenger');
+    
+    const maggiorenne = document.getElementById("age-18");
+    
+    
+    
+    
+    // selezione biglietto effettivo 
+    
+    
+    const namePassenger = document.getElementById('name-passenger');
+    const typeTicket = document.getElementById('type-ticket');
+    const cariage = document.getElementById('cariage');
+    const ticketCode = document.getElementById('ticket-code');
+    const ticketPrice = document.getElementById('ticket-price');
+    const btnInvio =  document.getElementById('calculateBtn');
 
+btnInvio.addEventListener('click', function() {
+
+
+
+    let eta = selectAge.value;
+    let km = selectKM.value;
+    let nome = selectNamePassenger.value;
+
+
+
+
+    let offerta = "Standard"
+
+
+
+
+    let priceBase = 0.21;    
+    const scontoGiovani = 0.20;
+    const scontoAnziani = 0.40;
+  
+    
+    let finalPrice;  
+    let price = km * priceBase
+    let priceDiscount = 0;
+    
+    if (eta === " age-min18") {
+        
+        priceDiscount = price * scontoGiovani;
+        
+        finalPrice = price - priceDiscount
+        offerta = "sconto giovani"
+        
+    } else if (eta === "age-over") {
+        
+        priceDiscount = price * scontoAnziani;
+        
+        finalPrice= price - priceDiscount
+        offerta = "sconto over 65"
+
+        
+    } else {
+        
+
+        finalPrice = price;
+    }
+    
+    // Generate random carriage and CP code
+    const randomCarriage = Math.floor((Math.random() * 10) + 1);
+    const randomCP = Math.floor((Math.random() * 99999) + 1);
+    
+    namePassenger.textContent = nome;
+    cariage.textContent = randomCarriage;
+    ticketCode.textContent = randomCP;
+    ticketPrice.textContent = finalPrice;
+    typeTicket.textContent = offerta;
+
+
+})    
 
 
 
