@@ -17,8 +17,106 @@
 // Se non vi sentite particolarmente creativi, questa potrebbe essere un’implementazione da seguire per il secondo milestone. Potete scegliere di implementare una soluzione completamente diversa oppure simile, ma in ogni caso cercate di farla vostra.
 
 
+// selezione richiesta dati
+let selectNamePassenger = document.getElementById('SelectName')
 
 
+let selectKM = document.getElementById('selectKM')
+
+
+let selectAge = document.getElementById('name-passenger')
+
+const maggiorenne= document.getElementById("age-18").innerHTML
+
+console.log(maggiorenne)
+
+
+
+?selezione biglietto effettivo 
+
+
+let namePassenger = document.getElementById('name-passenger')
+let typeTicket = document.getElementById('name-passenger')
+let cariage = document.getElementById('name-passenger')
+let ticketCode = document.getElementById('name-passenger')
+let ticketPrice = document.getElementById('name-passenger')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let priceBase = 0.21;
+const scontoGiovani = 0.20;
+const scontoAnziani = 0.40;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let finalPrice;
+
+let price = kmPercorsi * priceBase
+let priceDiscount 
+
+
+
+
+
+
+
+
+
+
+if (eta < 18) {
+    
+    priceDiscount = price * scontoGiovani;
+    
+    finalPrice = price - priceDiscount
+    
+
+} else if (eta >= 65) {
+
+    priceDiscount = price * scontoAnziani;
+    
+    finalPrice= price - priceDiscount
+
+
+} else {
+    
+    
+}
 
 
 
