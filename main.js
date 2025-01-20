@@ -27,7 +27,7 @@
     const selectKM = document.getElementById('selectKM');
     
     
-    const selectAge = document.getElementById('name-passenger');
+    const selectAge = document.getElementById('selectAge');
     
     const maggiorenne = document.getElementById("age-18");
     
@@ -43,6 +43,9 @@
     const ticketCode = document.getElementById('ticket-code');
     const ticketPrice = document.getElementById('ticket-price');
     const btnInvio =  document.getElementById('calculateBtn');
+    const reload = document.getElementById('refresh');
+    
+
 
 btnInvio.addEventListener('click', function() {
 
@@ -55,7 +58,7 @@ btnInvio.addEventListener('click', function() {
 
 
 
-    let offerta = "Standard"
+    let offerta = ""
 
 
 
@@ -69,14 +72,14 @@ btnInvio.addEventListener('click', function() {
     let price = km * priceBase
     let priceDiscount = 0;
     
-    if (eta === " age-min18") {
+    if (eta === "minorenne") {
         
         priceDiscount = price * scontoGiovani;
         
         finalPrice = price - priceDiscount
         offerta = "sconto giovani"
         
-    } else if (eta === "age-over") {
+    } else if (eta === "over65") {
         
         priceDiscount = price * scontoAnziani;
         
@@ -85,7 +88,7 @@ btnInvio.addEventListener('click', function() {
 
         
     } else {
-        
+        offerta= "standard"
 
         finalPrice = price;
     }
@@ -94,15 +97,20 @@ btnInvio.addEventListener('click', function() {
     const randomCarriage = Math.floor((Math.random() * 10) + 1);
     const randomCP = Math.floor((Math.random() * 99999) + 1);
     
-    namePassenger.textContent = nome;
-    cariage.textContent = randomCarriage;
-    ticketCode.textContent = randomCP;
-    ticketPrice.textContent = finalPrice;
-    typeTicket.textContent = offerta;
+    namePassenger.innerHTML = nome;
+    cariage.innerHTML = randomCarriage;
+    ticketCode.innerHTML = randomCP;
+    ticketPrice.innerHTML = finalPrice;
+    typeTicket.innerHTML = offerta;
 
 
 })    
 
+reload.addEventListener('click', function () {
+    
+    location.reload();
+
+})
 
 
 
