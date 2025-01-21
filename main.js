@@ -44,24 +44,19 @@
     const ticketPrice = document.getElementById('ticket-price');
     const btnInvio =  document.getElementById('calculateBtn');
     const reload = document.getElementById('refresh');
-    
+
+    const ticketLoad = document.getElementById('ticket');
 
 
 btnInvio.addEventListener('click', function() {
 
-
+    ticketLoad.classList.remove("d-none");
 
     let eta = selectAge.value;
     let km = selectKM.value;
     let nome = selectNamePassenger.value;
 
-
-
-
     let offerta = ""
-
-
-
 
     let priceBase = 0.21;    
     const scontoGiovani = 0.20;
